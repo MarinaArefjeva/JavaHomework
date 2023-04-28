@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Postalbot {
+    public static void main(String[] args) {
+        Scanner scanner  = new Scanner(System.in);
+        System.out.println("Сколько коробок вы хотите отправить?");
+        int numBoxes = scanner.nextInt();
+        System.out.println("Сколько весит каждая коробка в киллограмах?");
+        double boxWeight = scanner.nextDouble();
+
+        System.out.println("Введите имя получателя посылки:");
+        String customerFirstName = scanner.nextLine();
+
+        System.out.println("Введите фамилию получателя посылки:");
+        String customerLastName = scanner.nextLine();
+
+        System.out.println("Введите адрес получателя посылки:");
+        String customerAddress = scanner.nextLine();
+
+        double totalWeight = numBoxes * boxWeight;
+        System.out.println("Получатель: \"" + customerFirstName.toUpperCase() + " " + customerLastName.toUpperCase() + "\"");
+        System.out.println("Адрес получателя: \"" + customerAddress.toUpperCase() + "\"");
+        System.out.println("Вес посылки: " + totalWeight + " кг");
+
+        System.out.println("\nВсе верно? (Да/Нет)");
+        String isCorrect = scanner.nextLine();
+
+        if (isCorrect.equalsIgnoreCase("Да")) {
+            System.out.println("Квиток успешно создан!");
+            System.out.println("Благодарим за использование наших услуг!");
+        } else {
+            System.out.println("Пожалуйста, исправьте вводимые данные и повторите попытку.");
+        }
+
+        scanner.close();
+    }
+}
