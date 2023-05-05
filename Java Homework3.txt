@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class LittlePony {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Первое слово четное число символов:");
+        String firstWord = scanner.nextLine();
+
+        System.out.println("Второе слово из четное число символов:");
+        String secondWord = scanner.nextLine();
+
+        String sum = returnNewWord(firstWord, secondWord);
+        System.out.println("Сложение первой половины первого слова и второй половины второго слова " +
+                "получилось: " + sum);
+
+        System.out.println("returnNewWord(\"aabb\", \"ffgg\") = " + returnNewWord("aabb", "ffgg"));
+        System.out.println("returnNewWord(\"11112222\", \"we\") = " + returnNewWord("11112222", "we"));
+        System.out.println("returnNewWord(\"....!!!!\", \"asdf\") = " + returnNewWord("....!!!!", "asdf"));
+        System.out.println("returnNewWord(\"qwer\", \"rewq\") = " + returnNewWord("qwer", "rewq"));
+    }
+
+    public static String returnNewWord(String strOne, String strTwo) {
+        int lengthOfFirstString = strOne.length();
+        int lengthOfSecondString = strTwo.length();
+
+        int midIndexOfFirstString = lengthOfFirstString / 2;
+        int midIndexOfSecondString = lengthOfSecondString / 2;
+
+        String firstHalfOfFirstString = strOne.substring(0, midIndexOfFirstString);
+        String secondHalfOfSecondString = strTwo.substring(midIndexOfSecondString, lengthOfSecondString);
+
+        String resultOfConcatenation = firstHalfOfFirstString + secondHalfOfSecondString;
+
+        return resultOfConcatenation;
+
+
+        }
+    }
