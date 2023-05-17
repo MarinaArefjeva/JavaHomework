@@ -1,0 +1,32 @@
+package basic;
+public class Main{
+public enum Month{
+    January, February, March, April, May, June, July, August, September, October, November, December
+}
+    public static void main(String[] args) {
+        Month month = Month.February;
+        int days = getDaysInMonth(month);
+        System.out.println("Количество дней в " + month.name() + ": " + days);
+    }
+    public static int getDaysInMonth(Month month) {
+
+        switch (month) {
+            case January:
+            case March:
+            case May:
+            case July:
+            case August:
+            case October:
+            case December:
+                return 31;
+            case April:
+            case June:
+            case September:
+            case November:
+                return 30;
+            case February:
+            default:
+                return 28;
+        }
+    }
+}
