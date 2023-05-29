@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Homework9 {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Высота здания");
+        int heightOfBuild = scanner.nextInt();
+        System.out.println("Количество этажей подъема");
+        int countFloorUp = scanner.nextInt();
+        System.out.println("Количество этажей спуска");
+        int countFloorDown = scanner.nextInt();
+
+        int count = countOfLifts(heightOfBuild, countFloorUp, countFloorDown);
+        System.out.println("Количество подъемов " + count);
+    }
+
+    public static int countOfLifts(int heightOfBuild, int countFloorUp, int countFloorDown) {
+        int count = 0;
+        if (heightOfBuild > countFloorUp && countFloorUp > countFloorDown) {
+            for (int i = 1; i < heightOfBuild; i++) {
+                int result = (countFloorUp - countFloorDown) * i;
+                if (heightOfBuild <= result + countFloorUp) {
+                    count = i + 1;
+                    break;
+                }
+            }
+        } else {
+            System.out.println("Неверные параметры для задачи!");
+        }
+        return count;
+    }
+
+}
