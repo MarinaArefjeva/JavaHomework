@@ -1,0 +1,37 @@
+public class Main {
+    public static void main(String[] args) {
+        //Task1
+        for (int i = 1; i <= 100; i++) {
+            if (i % 7 == 0) {
+                System.out.println(i);
+
+            }
+
+        }
+        //Task 2
+        int sum = 0;
+        for (int i = 1; i <= 50; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                sum = sum + i;
+
+            }
+
+        }
+            System.out.println("sum" + sum );
+
+        //Task 3
+        int summa =0;
+        for (int i = 1; i<=1000; i++){
+            if ( Math.sqrt(i) % 1 == 0){
+                summa += i;
+            }
+        }
+        System.out.println("Сумма точных квадратов:" + summa);
+       }
+}
+
+
+
+
+
+
